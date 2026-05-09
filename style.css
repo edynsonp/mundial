@@ -1,0 +1,221 @@
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden;
+    background-color: #003366;
+}
+
+/* Importar fuente (opcional, si usas Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* --- Sección Principal (Hero Section) --- */
+.hero-section {
+    position: relative; /* Necesario para que z-index funcione en elementos hijos */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Importante para que la imagen de fondo no se salga */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* --- ¡¡¡IMPORTANTE!!!: Revisa y corrige esta ruta de imagen --- */
+    background-image: url('../images/fondo.webp'); /* <-- ¡CAMBIA ESTA RUTA SI ES NECESARIO! */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center center; /* Centra la imagen horizontal y verticalmente */
+    filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
+    z-index: 1; /* Asegura que esté detrás del contenido */
+}
+
+.content-overlay {
+    position: relative; /* Necesario para z-index */
+    z-index: 2; /* Asegura que esté encima de la imagen de fondo */
+    padding: 20px;
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: 4.5em; /* Título más grande */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* --- Estilos del Contador Regresivo --- */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.countdown-item span {
+    font-size: 7em; /* Números del contador más grandes */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.countdown-item p {
+    margin: 0;
+    font-size: 1.4em; /* Etiquetas del contador más grandes */
+    text-transform: uppercase;
+}
+
+/* --- Botón de Llamada a la Acción --- */
+/* Este botón está eliminado en tu HTML, así que esta regla CSS ya no se aplica */
+/* .cta-button { ... } */
+
+
+/* --- Estilos para la sección de partidos (ejemplo) --- */
+#partidos {
+    background-color: #ffffff;
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative; /* Necesario para z-index */
+    z-index: 3; /* Asegura que esté por encima de la imagen de fondo */
+}
+
+#partidos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #0056b3;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background-color: #002244;
+    color: #cccccc;
+    padding: 80px 20px; /* Ajustado para que se vea más grande */
+    text-align: center;
+    position: relative; /* Necesario para z-index */
+    z-index: 3; /* Asegura que esté sobre otros elementos */
+    margin-top: 50px; /* Espacio entre el contenido anterior y el footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1.3em; /* Tamaño de fuente aumentado */
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3em; /* Tamaño de fuente aumentado */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* --- Responsive Design General --- */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3em;
+    }
+    .countdown-item {
+        padding: 30px 40px;
+        min-width: 150px;
+    }
+    .countdown-item span {
+        font-size: 4.5em;
+    }
+    .countdown-item p {
+        font-size: 1.1em;
+    }
+    /* Botón CTA eliminado, así que no necesitamos ajustar su estilo */
+    /* .cta-button { ... } */
+
+    #partidos {
+        padding-top: 30px;
+    }
+
+    /* Ajuste específico para la imagen de fondo en pantallas medianas */
+    .background-image {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* --- Aseguramos que el footer mantenga sus estilos en pantallas medianas --- */
+    footer {
+        position: relative; /* Asegura que el footer se posicione correctamente */
+        z-index: 3; /* Mantiene el z-index alto */
+        padding: 80px 20px; /* Mantiene el padding grande */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    #countdown {
+        gap: 15px;
+    }
+    .countdown-item {
+        padding: 20px 30px;
+        min-width: 100px;
+    }
+    .countdown-item span {
+        font-size: 3.2em;
+    }
+    .countdown-item p {
+        font-size: 0.95em;
+    }
+    /* Botón CTA eliminado */
+    /* .cta-button { ... } */
+
+    #partidos {
+        padding-top: 20px;
+    }
+
+    /* Ajuste específico para la imagen de fondo en móviles */
+    .background-image {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* --- ¡¡¡SOLUCIÓN PARA EL FOOTER EN MÓVILES!!! --- */
+    footer {
+        position: relative; /* Asegura que el footer se posicione correctamente */
+        z-index: 3; /* Mantiene el z-index alto, por encima de otros elementos */
+        padding: 80px 20px; /* Mantiene el padding grande */
+        margin-top: 50px; /* Mantiene el margen superior */
+    }
+}
