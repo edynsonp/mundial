@@ -30,7 +30,7 @@ body {
     width: 100%;
     height: 100%;
     /* --- ¡¡¡IMPORTANTE!!!: Revisa y corrige esta ruta de imagen --- */
-    background-image: url('../images/fondo.webp'); /* <-- ¡CAMBIA ESTA RUTA SI ES NECESARIO! */
+    background-image: url('../images/balones.jpg'); /* <-- ¡CAMBIA ESTA RUTA SI ES NECESARIO! */
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
     background-position: center center; /* Centra la imagen horizontal y verticalmente */
     filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
